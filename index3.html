@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Фильтрация Массива</title>
+</head>
+<body>
+    
+    <script>
+
+        function filterBy(arr, type) {
+            let newArr = arr.filter((item => typeof(item) !== type)); 
+            console.log(newArr);
+        }
+
+        let array = ['hello', 'world', 23, '23', null, 34];
+        let type = "string";
+
+        filterBy(array, type);
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Пользователь</title>
+</head>
+<body>
+    
+    <script>
+
+        class CreateNewUser {
+            constructor (firstName, lastName, birthday) {
+                this.firstName = firstName;
+                this.lastName = lastName;
+                this.birthday = birthday;
+            }
+
+            getLogin = () => this.firstName[0].toLowerCase() + this.lastName.toLowerCase();
+
+            getAge () {
+
+                let nowDate = new Date();
+                let getNowYear = nowDate.getFullYear();
+                let getUserYear = this.birthday.slice(-4);
+                let userAge = getNowYear - getUserYear;
+                return userAge;
+
+            }
+
+            getPassword = () => this.firstName[0].toUpperCase() + this.lastName.toLowerCase() + this.birthday.slice(-4);
+
+
+
+        }
+
+        let newUser = new CreateNewUser(prompt("Enter Name", "Alex"), prompt("Enter Lastname", "Smith"), prompt("Enter your birthday", "23.12.1992"));
+        
+        console.log(newUser.getLogin());
+        console.log(newUser.getAge());
+        console.log(newUser.getPassword());
+        
+
+    </script>
+
+</body>
+</html>
